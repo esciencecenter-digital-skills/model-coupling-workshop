@@ -27,7 +27,7 @@
             <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
           </abbr>
         </span>
-        
+
       </div>
     </div>
     <div class="selector-container">
@@ -56,7 +56,7 @@
             </li>
           </ul></li>
       </div>
-      
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View <i data-feather="chevron-down"></i>
@@ -179,7 +179,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -198,7 +198,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Setup</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -207,7 +207,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="01-introduction.html">1. Introduction to model coupling</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -216,7 +216,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="02-theory.html">2. Model coupling theory: the Multiscale Modelling and Simulation Framework</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -225,7 +225,7 @@
     <div class="accordion-header" id="flush-heading4">
         <a href="03-muscle-connect.html">3. MUSCLE3 - connecting a model to MUSCLE</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -239,7 +239,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
@@ -251,7 +251,7 @@
 <li><a href="#running-separate-programs-using-the-muscle3-manager">Running separate programs using the MUSCLE3 manager</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -277,16 +277,16 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      
+
                     </ul></div>
                 </div>
               </div>
             </div>
             <hr class="half-width resources"><a href="aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -314,11 +314,11 @@
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>MUSCLE3 - coupling and running</h1>
         <p>Last updated on 2022-10-31 |
-        
+
         <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/edit/main/episodes/04-muscle-couple.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -349,11 +349,11 @@
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>We managed to connect one of our sub-models, the reaction model, to MUSCLE. In order to make a coupled simulation, we need at least two models. The second model here is the diffusion model. We prepared it for you, adding the necessary MUSCLE bindings and comments similar to what we did for the reaction model. You can open it from <code>diffusion.py</code>.</p>
-</section><section id="investigating-the-macro-model"><h2 class="section-heading">Investigating the macro model<a class="anchor" aria-label="anchor" href="#investigating-the-macro-model"></a>
-</h2>
+</section><section><h2 class="section-heading" id="investigating-the-macro-model">Investigating the macro model<a class="anchor" aria-label="anchor" href="#investigating-the-macro-model"></a>
+<a class="anchor" aria-label="anchor" href="#investigating-the-macro-model"></a></h2>
 <hr class="half-width"><div id="challenge-1-investigating-the-diffusion-model" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -372,7 +372,7 @@
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul><li>The ports are named differently, and are attached to different operators</li>
 <li>The send and receive statements are now within the state update loop</li>
@@ -380,8 +380,8 @@
 </div>
 </div>
 </div>
-</section><section id="connecting-the-models-together"><h2 class="section-heading">Connecting the models together<a class="anchor" aria-label="anchor" href="#connecting-the-models-together"></a>
-</h2>
+</section><section><h2 class="section-heading" id="connecting-the-models-together">Connecting the models together<a class="anchor" aria-label="anchor" href="#connecting-the-models-together"></a>
+<a class="anchor" aria-label="anchor" href="#connecting-the-models-together"></a></h2>
 <hr class="half-width"><p>With both models defined, we now need to instruct MUSCLE3 on how to connect them together. Recall the gMMSL diagram from the previous episode (with port names, this time):</p>
 <figure><img src="fig/ep04-reaction-diffusion-coupling.png" alt="gMMSL diagram for the reaction-diffusion model. Two boxes labeled macro and micro represent the two submodels. A line connects a filled circle labeled state_out on macro to an open diamond labeled state_in on micro. A second line connects a filled diamond labeled final_state on micro to an open circle labeled state_in on macro." class="figure mx-auto d-block"><figcaption>gMMSL diagram for the reaction-diffusion model</figcaption></figure><p>Since diagrams aren’t valid Python, we need an alternative way of describing this model in our code. For this, we will create a MUSCLE configuration file written in the yMMSL language. This file tells the MUSCLE manager about the existence of each submodel and how it should be connected to the other components.</p>
 <div id="challenge-2-creating-the-ymmsl-file" class="callout challenge">
@@ -425,7 +425,7 @@
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -458,8 +458,8 @@
 </div>
 </div>
 </div>
-</section><section id="adding-settings"><h2 class="section-heading">Adding settings<a class="anchor" aria-label="anchor" href="#adding-settings"></a>
-</h2>
+</section><section><h2 class="section-heading" id="adding-settings">Adding settings<a class="anchor" aria-label="anchor" href="#adding-settings"></a>
+<a class="anchor" aria-label="anchor" href="#adding-settings"></a></h2>
 <hr class="half-width"><p>The above specifies which submodels we have and how they are connected together. Next, we need to configure them by adding the settings to the yMMSL file. These will be passed to the models, who get them using the <code>Instance.get_settings()</code> function. Go ahead and add them to your <code>reaction_diffusion.ymmsl</code>:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -475,8 +475,8 @@
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">d</span><span class="kw">:</span><span class="at"> </span><span class="fl">4.05e-2</span><span class="co">    # diffusion parameter</span></span></code></pre>
 </div>
 <p>Look at the names of the settings. Does anything stand out to you?</p>
-</section><section id="specifying-resources"><h2 class="section-heading">Specifying resources<a class="anchor" aria-label="anchor" href="#specifying-resources"></a>
-</h2>
+</section><section><h2 class="section-heading" id="specifying-resources">Specifying resources<a class="anchor" aria-label="anchor" href="#specifying-resources"></a>
+<a class="anchor" aria-label="anchor" href="#specifying-resources"></a></h2>
 <hr class="half-width"><p>Finally, we need to tell MUSCLE3 whether and if so how each model is parallelised, so that it can reserve adequate resources for each component. In this case, the models are single-threaded so that is what we specify. Again, add this to your file.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -488,8 +488,8 @@
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">threads</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span></code></pre>
 </div>
 <p>Note that we specify resources for each component, not for each implementation.</p>
-</section><section id="launching-the-simulation"><h2 class="section-heading">Launching the simulation<a class="anchor" aria-label="anchor" href="#launching-the-simulation"></a>
-</h2>
+</section><section><h2 class="section-heading" id="launching-the-simulation">Launching the simulation<a class="anchor" aria-label="anchor" href="#launching-the-simulation"></a>
+<a class="anchor" aria-label="anchor" href="#launching-the-simulation"></a></h2>
 <hr class="half-width"><p>This gives us all the pieces needed to construct a coupled simulation. All we need is the two model functions and the configuration, then we can connect them together and run the whole thing. The model functions we can import from the files we saw before:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -538,15 +538,15 @@
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>$ python3 coupled_model.py</p>
 </div>
 </div>
 </div>
 </div>
-</section><section id="running-separate-programs-using-the-muscle3-manager"><h2 class="section-heading">Running separate programs using the MUSCLE3 manager<a class="anchor" aria-label="anchor" href="#running-separate-programs-using-the-muscle3-manager"></a>
-</h2>
+</section><section><h2 class="section-heading" id="running-separate-programs-using-the-muscle3-manager">Running separate programs using the MUSCLE3 manager<a class="anchor" aria-label="anchor" href="#running-separate-programs-using-the-muscle3-manager"></a>
+<a class="anchor" aria-label="anchor" href="#running-separate-programs-using-the-muscle3-manager"></a></h2>
 <hr class="half-width"><p>The above <code>coupled_model.py</code> script imports the models as Python functions, and then starts them using MUSCLE3’s <code>runner.run_simulation()</code> function. This works great for models consisting entirely of Python components, and which are small enough to run on the local machine. However, models written in other languages like C++ or Fortran cannot be imported as Python functions, and larger simulations may need to run on many nodes on an HPC cluster. For such simulations, we cannot use <code>run_simulation()</code>, and we need to use the MUSCLE3 <em>manager</em> instead.</p>
 <p>The MUSCLE3 manager, like the runner, gets a model description and a list of implementations to use, and then starts each required instance by starting its implementation. That’s a fair bit of new terminology, so here is what those words mean:</p>
 <dl><dt>Component</dt>
@@ -594,7 +594,7 @@
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>To turn <code>reaction.py</code> into a stand-alone program, you need to add the final section of <code>diffusion.py</code> to the end, slightly modified:</p>
 <pre><code>if __name__ == '__main__':
@@ -634,9 +634,9 @@
 </ul></div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -661,18 +661,18 @@ any links that you are not going to use.
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/edit/main/episodes/04-muscle-couple.md" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:training@esciencecenter.nl">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
@@ -697,7 +697,7 @@ any links that you are not going to use.
   "identifier": "https://esciencecenter-digital-skills.github.io/lesson-model-coupling/04-muscle-couple.html",
   "dateCreated": "2022-08-16",
   "dateModified": "2022-10-31",
-  "datePublished": "2024-07-02"
+  "datePublished": "2024-07-09"
 }
 
   </script><script>

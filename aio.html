@@ -43,7 +43,7 @@
             <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
           </abbr>
         </span>
-        
+
       </div>
     </div>
     <div class="selector-container">
@@ -74,7 +74,7 @@
           </ul>
 </li>
       </div>
-      
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Learner View <i data-feather="chevron-down"></i>
@@ -210,7 +210,7 @@
 <!--div.sidenav-view-selector -->
             </div>
 <!--/div.col -->
-      
+
             <hr>
 </div>
 <!--/div.mobile-row -->
@@ -232,7 +232,7 @@
         <a href="index.html">Summary and Setup</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -244,7 +244,7 @@
         <a href="01-introduction.html">1. Introduction to model coupling</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -256,7 +256,7 @@
         <a href="02-theory.html">2. Model coupling theory: the Multiscale Modelling and Simulation Framework</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -268,7 +268,7 @@
         <a href="03-muscle-connect.html">3. MUSCLE3 - connecting a model to MUSCLE</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -280,7 +280,7 @@
         <a href="04-muscle-couple.html">4. MUSCLE3 - coupling and running</a>
     </div>
 <!--/div.accordion-header-->
-        
+
   </div>
 <!--/div.accordion-item-->
 </div>
@@ -310,7 +310,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      
+
                     </ul>
 </div>
                 </div>
@@ -318,11 +318,11 @@
             </div>
             <hr class="half-width resources">
 <a href="aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none">
 <div class="d-grid gap-1">
-            
+
             </div>
           </div>
 <!-- /div.accordion -->
@@ -343,7 +343,7 @@
 <section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Introduction to model coupling</a></p>
 <hr>
 <p>Last updated on 2022-10-31 |
-        
+
         <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -376,15 +376,18 @@
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
 <p>Computer simulations are widely used in modern science to understand and predict the behaviour of natural systems. The computer program that simulates a given physical system is referred to as a <em>model</em> of that system. For example, a climate simulation code is a <em>model</em> of the Earth’s climate. Some models may be very simple e.g. describing the evolution of a 1 dimensional system. Others may be highly complex, involving many different physical processes. A well known use of computer simulation is in the field of weather forecasting, in which a very complex model composed of a multitude of different physical processes must be simulated by a computer program, generally requiring powerful supercomputers.</p>
-</section><section id="mathematical-model-vs-computational-model"><h2 class="section-heading">Mathematical model vs computational model<a class="anchor" aria-label="anchor" href="#mathematical-model-vs-computational-model"></a>
+</section><section><h2 class="section-heading" id="mathematical-model-vs-computational-model">Mathematical model vs computational model<a class="anchor" aria-label="anchor" href="#mathematical-model-vs-computational-model"></a>
+<a class="anchor" aria-label="anchor" href="#mathematical-model-vs-computational-model"></a>
 </h2>
 <hr class="half-width">
 <p>For this course, it is important to distinguish between a <em>mathematical</em> model, and a <em>computational</em> model. A mathematical model refers to the set of mathematical equations that describe the evolution of a given physical system. The computational model refers to the actual computer program that describes the evolution of a physical system. These are closely connected concepts - after all, many computational models are just solving a given mathematical model numerically. However, the distinction is important. Some computational models can be simulating many different aspects of a physical system, which could involve solving many different mathematical models. The process of making sure that a computational model is solving the mathematical model you think it is, is called <em>verification</em>.</p>
-</section><section id="what-is-model-coupling"><h2 class="section-heading">What is model coupling?<a class="anchor" aria-label="anchor" href="#what-is-model-coupling"></a>
+</section><section><h2 class="section-heading" id="what-is-model-coupling">What is model coupling?<a class="anchor" aria-label="anchor" href="#what-is-model-coupling"></a>
+<a class="anchor" aria-label="anchor" href="#what-is-model-coupling"></a>
 </h2>
 <hr class="half-width">
 <p>In short, “coupling” one computational model to another means that we pass information between the models in order to connect them into one big model. If the output of one model can be used as the input of another, for example, then it may be possible to couple them. The models must of course be compatible - at least one model must calculate something that can be used by the other model.</p>
@@ -410,7 +413,7 @@
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Example solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>Local climate-ecology: One model simulates the expected climate of a region of the Earth under certain vegetation/land use conditions. A separate model simulates the proliferation and behaviour of animals and vegetation in a given region under influence of various climatic conditions.</li>
@@ -421,7 +424,8 @@
 </div>
 </div>
 </div>
-</section><section id="why-couple-models-together"><h2 class="section-heading">Why couple models together?<a class="anchor" aria-label="anchor" href="#why-couple-models-together"></a>
+</section><section><h2 class="section-heading" id="why-couple-models-together">Why couple models together?<a class="anchor" aria-label="anchor" href="#why-couple-models-together"></a>
+<a class="anchor" aria-label="anchor" href="#why-couple-models-together"></a>
 </h2>
 <hr class="half-width">
 <p>It is generally simpler and cheaper to simulate a small part of a system, or specific physical interaction. Processes at different length or time scales are often subject to different forces, while they can neglect others. For example, a mechanical model of a car frame will not consider behaviour at the atomic scale, whereas a molecular dynamics simulation naturally must. Computational modelling is therefore often highly specialised.</p>
@@ -443,7 +447,7 @@
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ul>
 <li>Code re-use: If a model already exists then ideally you should reuse it, rather than re-invent the wheel.</li>
@@ -473,14 +477,14 @@
 </div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></section><section id="aio-02-theory"><p>Content from <a href="02-theory.html">Model coupling theory: the Multiscale Modelling and Simulation Framework</a></p>
 <hr>
 <p>Last updated on 2022-10-31 |
-        
+
         <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/edit/main/episodes/02-theory.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -512,12 +516,14 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
 <p>Coupling models can be a difficult task, especially when there are many models involved that model processes in different ways and at different scales in time and space. To make a coupled simulation, you need to figure out which information needs to be passed between which submodels, when it needs to be sent and received, and how it can be represented, and that can be quite a puzzle. Fortunately, there is a theory of model coupling that can help you with this. It is called the Multiscale Modelling and Simulation Framework (MMSF), and despite its name, it also includes same-scale couplings.</p>
 <p>In this episode, we’ll work through a slightly extended version of the MMSF’s process for coupling two models representing two processes.</p>
-</section><section id="domains"><h2 class="section-heading">Domains<a class="anchor" aria-label="anchor" href="#domains"></a>
+</section><section><h2 class="section-heading" id="domains">Domains<a class="anchor" aria-label="anchor" href="#domains"></a>
+<a class="anchor" aria-label="anchor" href="#domains"></a>
 </h2>
 <hr class="half-width">
 <p>Mathematical and simulation models represent some kind of process, which takes place in a certain location in time and in space: its domain. The weather takes place in the atmosphere, earthquakes in the Earth’s crust, a forest fire in a forest. In time, that forest fire begins with a lightning strike and ends when the flames are extinguished, and even continuous processes like the airflow around an aeroplane wing can be considered to start when circumstances change and end when a steady state is reached again.</p>
@@ -565,7 +571,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="scales"><h2 class="section-heading">Scales<a class="anchor" aria-label="anchor" href="#scales"></a>
+</section><section><h2 class="section-heading" id="scales">Scales<a class="anchor" aria-label="anchor" href="#scales"></a>
+<a class="anchor" aria-label="anchor" href="#scales"></a>
 </h2>
 <hr class="half-width">
 <p>A second important property of a physical process is the scales, again in time and in space, on which it takes place. A scale can be defined by its grain and extent. There are many other terms in use for these, but we’ll use these here because they’re less ambiguous than most. The <em>grain</em> refers to the smallest detail that the model can represent. In practice, that is usually set by the timestep (in time), grid spacing, or size of an agent (in space). If these can vary throughout the domain, pick the smallest. The <em>extent</em> refers to the size of the process in space and time, so the size of its domain. How long does it take to complete (or to reach a steady state), and how large an area is modelled?</p>
@@ -656,7 +663,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="models-and-the-submodel-execution-loop"><h2 class="section-heading">Models and the Submodel Execution Loop<a class="anchor" aria-label="anchor" href="#models-and-the-submodel-execution-loop"></a>
+</section><section><h2 class="section-heading" id="models-and-the-submodel-execution-loop">Models and the Submodel Execution Loop<a class="anchor" aria-label="anchor" href="#models-and-the-submodel-execution-loop"></a>
+<a class="anchor" aria-label="anchor" href="#models-and-the-submodel-execution-loop"></a>
 </h2>
 <hr class="half-width">
 <p>So far, we have talked about domains and scales of models, which we can do based on the physical properties of the modelled system, and the research questions we ask about that system. In order to be able to technically couple models however, we need to know what a model is. In the MMSF, this is done using a universal model-of-a-model called the Submodel Execution Loop (SEL):</p>
@@ -677,7 +685,8 @@ any links that you are not going to use.
 </div>
 </div>
 <p>This basic model is quite flexible. If the loop is run zero times, then the model is a simple function. Timesteps may be of any length, and vary during the run, and the model may decide to stop and exit the state update loop at any time. The state may represent anything at all in any way, and it may be updated in whichever way is suitable for the model. Any simulation code you may want to use is very likely to fit these minimal constraints.</p>
-</section><section id="temporal-domain-and-scale-relations"><h2 class="section-heading">Temporal domain and scale relations<a class="anchor" aria-label="anchor" href="#temporal-domain-and-scale-relations"></a>
+</section><section><h2 class="section-heading" id="temporal-domain-and-scale-relations">Temporal domain and scale relations<a class="anchor" aria-label="anchor" href="#temporal-domain-and-scale-relations"></a>
+<a class="anchor" aria-label="anchor" href="#temporal-domain-and-scale-relations"></a>
 </h2>
 <hr class="half-width">
 <p>Now that we know what a model is and how models may be related in terms of their domains and scales, we can decide how to set up the coupled simulation. We do this by looking at all pairs of two models under consideration, one pair at a time, and consider the relationships between their temporal and spatial scales as well as their domains.</p>
@@ -778,13 +787,15 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="coupling-templates"><h2 class="section-heading">Coupling Templates<a class="anchor" aria-label="anchor" href="#coupling-templates"></a>
+</section><section><h2 class="section-heading" id="coupling-templates">Coupling Templates<a class="anchor" aria-label="anchor" href="#coupling-templates"></a>
+<a class="anchor" aria-label="anchor" href="#coupling-templates"></a>
 </h2>
 <hr class="half-width">
 <figure><img src="fig/ep02-coupling-templates.png" alt="Three diagrams of the coupling templates. Each diagram shows two submodel execution loops. The first diagram is titled Dispatch. In it, O_F on the first SEL is connected to F_INIT on the second SEL. The second diagram is titled Interact. In it, O_I on each SEL is connected to S on the other. The third diagram is titled Call and Release. O_I on the first SEL is connected to F_INIT on the second, this is Call. O_F on the second SEL is connected to S on the first, this is Release." class="figure mx-auto d-block"><figcaption>Coupling Templates</figcaption></figure><p>The three cases above demonstrate the four <em>Coupling Templates</em> defined by the MMSF. The first one, <span class="math inline">\(O_f\)</span> to <span class="math inline">\(f_{init}\)</span>, is called <em>dispatch</em>. The second one, <span class="math inline">\(O_i\)</span> to <span class="math inline">\(S\)</span> is called <em>interact</em>, and usually comes in pairs. The third one and the fourth one usually go together, as the combination <em>call</em> (<span class="math inline">\(O_i\)</span> to <span class="math inline">\(f_{init}\)</span>) and <em>release</em> (<span class="math inline">\(O_f\)</span> to <span class="math inline">\(S\)</span>).</p>
 <p>Given the constraints of which operators can send and which can receive, these are in fact all four possible types of connections, and between them they cover all kinds of temporal scale relations.</p>
 <p>If the time domains or time scales overlap, but are not equivalent, then an additional component is needed that sits between the models; we will not go into that advanced use case here.</p>
-</section><section id="spatial-domains-scales-and-multiplicity"><h2 class="section-heading">Spatial domains, scales and multiplicity<a class="anchor" aria-label="anchor" href="#spatial-domains-scales-and-multiplicity"></a>
+</section><section><h2 class="section-heading" id="spatial-domains-scales-and-multiplicity">Spatial domains, scales and multiplicity<a class="anchor" aria-label="anchor" href="#spatial-domains-scales-and-multiplicity"></a>
+<a class="anchor" aria-label="anchor" href="#spatial-domains-scales-and-multiplicity"></a>
 </h2>
 <hr class="half-width">
 <p>Having discussed temporal scales, let’s move on to the spatial scales. Like with scales in time, scales in space can be the same, overlap, be adjacent or be separated, and you can see which one you have by looking at your Scale Separation Map. Here’s another table with the interpretation of those relations in space:</p>
@@ -885,7 +896,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="mmsl-diagrams"><h2 class="section-heading">MMSL Diagrams<a class="anchor" aria-label="anchor" href="#mmsl-diagrams"></a>
+</section><section><h2 class="section-heading" id="mmsl-diagrams">MMSL Diagrams<a class="anchor" aria-label="anchor" href="#mmsl-diagrams"></a>
+<a class="anchor" aria-label="anchor" href="#mmsl-diagrams"></a>
 </h2>
 <hr class="half-width">
 <p>For larger coupled simulations consisting of several submodels and other components, drawing the complete submodel execution loop as we did above gets too complicated. Fortunately, a simplified notation is available in the form of the Multiscale Modelling and Simulation Language (MMSL). This language describes a coupled simulation as a set of components and the connections between them. Its YAML-based form, yMMSL, is used as the configuration language for MUSCLE3 (more on which in the next episodes). Its graphical form, gMMSL, provides a compact visual representation of a coupled model:</p>
@@ -945,14 +957,14 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></section><section id="aio-03-muscle-connect"><p>Content from <a href="03-muscle-connect.html">MUSCLE3 - connecting a model to MUSCLE</a></p>
 <hr>
 <p>Last updated on 2022-10-31 |
-        
+
         <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/edit/main/episodes/03-muscle-connect.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -984,7 +996,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
 <p>MUSCLE3 is the third incarnation of the Multiscale Coupling Library and Environment. MUSCLE and the MMSF were developed at the University of Amsterdam Computational Science Lab, and MUSCLE3 is the result of a collaboration with the Netherlands eScience Center. MUSCLE3’s purpose is to make creating coupled multiscale simulations easy. MUSCLE3 uses the Multiscale Modelling and Simulation Language (MMSL) to describe the structure of a multiscale model, and you will notice that the terminology in MUSCLE3 closely links to what you have learned in the previous episode about MMSF.</p>
@@ -1006,7 +1019,8 @@ any links that you are not going to use.
 <p><strong>ymmsl-python</strong> is a Python library that contains class definitions to represent an MMSL model description. A yMMSL file serves as the interface between us (humans) and the muscle manager and is meant to describe the multiscale simulation and tell the muscle manager what to do.</p>
 <p>Here, we will connect the reaction submodel (the micromodel) to the <code>libmuscle</code> library step by step. We’ll use yMMSL and the manager in the next episode.</p>
 </div>
-</section><section id="dissect-your-model"><h2 class="section-heading">Dissect your model<a class="anchor" aria-label="anchor" href="#dissect-your-model"></a>
+</section><section><h2 class="section-heading" id="dissect-your-model">Dissect your model<a class="anchor" aria-label="anchor" href="#dissect-your-model"></a>
+<a class="anchor" aria-label="anchor" href="#dissect-your-model"></a>
 </h2>
 <hr class="half-width">
 <p>Open the file called <code>reaction.py</code> from the data folder that you downloaded in the setup section in a text editor. It contains a function called <code>reaction</code> that requires a <code>numpy.array</code> as input and returns another after doing some operations.</p>
@@ -1112,7 +1126,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="creating-an-instance-object"><h2 class="section-heading">Creating an Instance object<a class="anchor" aria-label="anchor" href="#creating-an-instance-object"></a>
+</section><section><h2 class="section-heading" id="creating-an-instance-object">Creating an Instance object<a class="anchor" aria-label="anchor" href="#creating-an-instance-object"></a>
+<a class="anchor" aria-label="anchor" href="#creating-an-instance-object"></a>
 </h2>
 <hr class="half-width">
 <p>To let a model communicate with the muscle manager, other submodels and the outside world, we need to create a <code>libmuscle.Instance</code> object. An instance is a running submodel, and the Instance object represents this particular instance to MUSCLE3:</p>
@@ -1158,7 +1173,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="the-reuse-loop"><h2 class="section-heading">The reuse loop<a class="anchor" aria-label="anchor" href="#the-reuse-loop"></a>
+</section><section><h2 class="section-heading" id="the-reuse-loop">The reuse loop<a class="anchor" aria-label="anchor" href="#the-reuse-loop"></a>
+<a class="anchor" aria-label="anchor" href="#the-reuse-loop"></a>
 </h2>
 <hr class="half-width">
 <p>In multiscale coupled simulations, submodels often have to run multiple times, for instance because they are used as a micro model or because they are part of an ensemble that cannot be completely parallelised. To make this possible, we will wrap the entire submodel in a loop, the so-called reuse loop. Exactly when this loop needs to end often depends on the behaviour of the whole model, and is not easy to determine in advance, but fortunately MUSCLE will do that for us if we call the <code>Instance.reuse_instance()</code> method.</p>
@@ -1238,7 +1254,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="settings"><h2 class="section-heading">Settings<a class="anchor" aria-label="anchor" href="#settings"></a>
+</section><section><h2 class="section-heading" id="settings">Settings<a class="anchor" aria-label="anchor" href="#settings"></a>
+<a class="anchor" aria-label="anchor" href="#settings"></a>
 </h2>
 <hr class="half-width">
 <p>Next is the first part of the model, in which the model is initialised. Nearly every model needs some settings that define how it behaves (e.g. the size of a timestep or model specific parameters). With MUSCLE, we can specify settings for each submodel in a central configuration file, and get those settings from <code>libmuscle</code> in the model code. This way, we don’t have to change our model code every time if we want to try a range of values (for instance, to perform a sensitivity analysis). We can use the <code>Instance.get_setting</code> function instead to ask the MUSCLE manager for the values. Putting the values in the configuration file will be covered in the next episode, here we’ll look at how to get them from <code>libmuscle</code>.</p>
@@ -1320,7 +1337,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="receiving-messages"><h2 class="section-heading">Receiving messages<a class="anchor" aria-label="anchor" href="#receiving-messages"></a>
+</section><section><h2 class="section-heading" id="receiving-messages">Receiving messages<a class="anchor" aria-label="anchor" href="#receiving-messages"></a>
+<a class="anchor" aria-label="anchor" href="#receiving-messages"></a>
 </h2>
 <hr class="half-width">
 <p>Apart from settings, we can use the <code>Instance.receive</code> function to receive an initial state for this submodel on the <code>initial_state</code> port. Note that we have declared that port above, and declared it to be associated with the <code>F_INIT</code> operator. During <code>F_INIT</code>, messages can only be received, not sent, so that declaration makes <code>initial_state</code> a receiving port.</p>
@@ -1346,7 +1364,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="state-update-loop"><h2 class="section-heading">State update loop<a class="anchor" aria-label="anchor" href="#state-update-loop"></a>
+</section><section><h2 class="section-heading" id="state-update-loop">State update loop<a class="anchor" aria-label="anchor" href="#state-update-loop"></a>
+<a class="anchor" aria-label="anchor" href="#state-update-loop"></a>
 </h2>
 <hr class="half-width">
 <p>The actual state update happens in the operator <span class="math inline">\(S\)</span> in the Submodel Execution Loop and, in our example model, it is determined entirely by the current state. Since no information from outside is needed, we do not receive any messages, and in our <code>libmuscle.Instance</code> declaration above, we did not declare any ports associated with <code>Operator.S</code>.</p>
@@ -1419,7 +1438,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="sending-messages"><h2 class="section-heading">Sending messages<a class="anchor" aria-label="anchor" href="#sending-messages"></a>
+</section><section><h2 class="section-heading" id="sending-messages">Sending messages<a class="anchor" aria-label="anchor" href="#sending-messages"></a>
+<a class="anchor" aria-label="anchor" href="#sending-messages"></a>
 </h2>
 <hr class="half-width">
 <p>To send a message we first have to construct a <code>libmuscle.Message</code> object containing the current simulation time and the current state. We will convert the <code>numpy.array</code> to a <code>libmuscle.Grid</code> object first.</p>
@@ -1531,14 +1551,14 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></section><section id="aio-04-muscle-couple"><p>Content from <a href="04-muscle-couple.html">MUSCLE3 - coupling and running</a></p>
 <hr>
 <p>Last updated on 2022-10-31 |
-        
+
         <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/edit/main/episodes/04-muscle-couple.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -1571,11 +1591,13 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
 <p>We managed to connect one of our sub-models, the reaction model, to MUSCLE. In order to make a coupled simulation, we need at least two models. The second model here is the diffusion model. We prepared it for you, adding the necessary MUSCLE bindings and comments similar to what we did for the reaction model. You can open it from <code>diffusion.py</code>.</p>
-</section><section id="investigating-the-macro-model"><h2 class="section-heading">Investigating the macro model<a class="anchor" aria-label="anchor" href="#investigating-the-macro-model"></a>
+</section><section><h2 class="section-heading" id="investigating-the-macro-model">Investigating the macro model<a class="anchor" aria-label="anchor" href="#investigating-the-macro-model"></a>
+<a class="anchor" aria-label="anchor" href="#investigating-the-macro-model"></a>
 </h2>
 <hr class="half-width">
 <div id="challenge-1-investigating-the-diffusion-model" class="callout challenge">
@@ -1598,7 +1620,7 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>The ports are named differently, and are attached to different operators</li>
@@ -1608,7 +1630,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="connecting-the-models-together"><h2 class="section-heading">Connecting the models together<a class="anchor" aria-label="anchor" href="#connecting-the-models-together"></a>
+</section><section><h2 class="section-heading" id="connecting-the-models-together">Connecting the models together<a class="anchor" aria-label="anchor" href="#connecting-the-models-together"></a>
+<a class="anchor" aria-label="anchor" href="#connecting-the-models-together"></a>
 </h2>
 <hr class="half-width">
 <p>With both models defined, we now need to instruct MUSCLE3 on how to connect them together. Recall the gMMSL diagram from the previous episode (with port names, this time):</p>
@@ -1654,7 +1677,7 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1687,7 +1710,8 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-</section><section id="adding-settings"><h2 class="section-heading">Adding settings<a class="anchor" aria-label="anchor" href="#adding-settings"></a>
+</section><section><h2 class="section-heading" id="adding-settings">Adding settings<a class="anchor" aria-label="anchor" href="#adding-settings"></a>
+<a class="anchor" aria-label="anchor" href="#adding-settings"></a>
 </h2>
 <hr class="half-width">
 <p>The above specifies which submodels we have and how they are connected together. Next, we need to configure them by adding the settings to the yMMSL file. These will be passed to the models, who get them using the <code>Instance.get_settings()</code> function. Go ahead and add them to your <code>reaction_diffusion.ymmsl</code>:</p>
@@ -1705,7 +1729,8 @@ any links that you are not going to use.
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">d</span><span class="kw">:</span><span class="at"> </span><span class="fl">4.05e-2</span><span class="co">    # diffusion parameter</span></span></code></pre>
 </div>
 <p>Look at the names of the settings. Does anything stand out to you?</p>
-</section><section id="specifying-resources"><h2 class="section-heading">Specifying resources<a class="anchor" aria-label="anchor" href="#specifying-resources"></a>
+</section><section><h2 class="section-heading" id="specifying-resources">Specifying resources<a class="anchor" aria-label="anchor" href="#specifying-resources"></a>
+<a class="anchor" aria-label="anchor" href="#specifying-resources"></a>
 </h2>
 <hr class="half-width">
 <p>Finally, we need to tell MUSCLE3 whether and if so how each model is parallelised, so that it can reserve adequate resources for each component. In this case, the models are single-threaded so that is what we specify. Again, add this to your file.</p>
@@ -1719,7 +1744,8 @@ any links that you are not going to use.
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">threads</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span></code></pre>
 </div>
 <p>Note that we specify resources for each component, not for each implementation.</p>
-</section><section id="launching-the-simulation"><h2 class="section-heading">Launching the simulation<a class="anchor" aria-label="anchor" href="#launching-the-simulation"></a>
+</section><section><h2 class="section-heading" id="launching-the-simulation">Launching the simulation<a class="anchor" aria-label="anchor" href="#launching-the-simulation"></a>
+<a class="anchor" aria-label="anchor" href="#launching-the-simulation"></a>
 </h2>
 <hr class="half-width">
 <p>This gives us all the pieces needed to construct a coupled simulation. All we need is the two model functions and the configuration, then we can connect them together and run the whole thing. The model functions we can import from the files we saw before:</p>
@@ -1770,14 +1796,15 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>$ python3 coupled_model.py</p>
 </div>
 </div>
 </div>
 </div>
-</section><section id="running-separate-programs-using-the-muscle3-manager"><h2 class="section-heading">Running separate programs using the MUSCLE3 manager<a class="anchor" aria-label="anchor" href="#running-separate-programs-using-the-muscle3-manager"></a>
+</section><section><h2 class="section-heading" id="running-separate-programs-using-the-muscle3-manager">Running separate programs using the MUSCLE3 manager<a class="anchor" aria-label="anchor" href="#running-separate-programs-using-the-muscle3-manager"></a>
+<a class="anchor" aria-label="anchor" href="#running-separate-programs-using-the-muscle3-manager"></a>
 </h2>
 <hr class="half-width">
 <p>The above <code>coupled_model.py</code> script imports the models as Python functions, and then starts them using MUSCLE3’s <code>runner.run_simulation()</code> function. This works great for models consisting entirely of Python components, and which are small enough to run on the local machine. However, models written in other languages like C++ or Fortran cannot be imported as Python functions, and larger simulations may need to run on many nodes on an HPC cluster. For such simulations, we cannot use <code>run_simulation()</code>, and we need to use the MUSCLE3 <em>manager</em> instead.</p>
@@ -1832,7 +1859,7 @@ any links that you are not going to use.
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>To turn <code>reaction.py</code> into a stand-alone program, you need to add the final section of <code>diffusion.py</code> to the end, slightly modified:</p>
 <pre><code>if __name__ == '__main__':
@@ -1874,9 +1901,9 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<!-- 
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
+any links that you are not going to use.
  -->
 </section></section>
 </div>
@@ -1890,18 +1917,18 @@ any links that you are not going to use.
 <div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/edit/main/README.md" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/esciencecenter-digital-skills/lesson-model-coupling/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:training@esciencecenter.nl">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
@@ -1926,8 +1953,8 @@ any links that you are not going to use.
   "url": "https://esciencecenter-digital-skills.github.io/lesson-model-coupling/aio.html",
   "identifier": "https://esciencecenter-digital-skills.github.io/lesson-model-coupling/aio.html",
   "dateCreated": "2022-08-16",
-  "dateModified": "2024-07-02",
-  "datePublished": "2024-07-02"
+  "dateModified": "2024-07-09",
+  "datePublished": "2024-07-09"
 }
 
   </script><script>
