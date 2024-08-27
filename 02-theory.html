@@ -260,10 +260,10 @@
               </div>
             </div>
 
-            <hr class="half-width"><div class="accordion accordion-flush resources" id="accordionFlush12">
+            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RESOURCES
                   </button>
                 </h2>
@@ -283,7 +283,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources"><a href="aio.html">See all in one page</a>
+            <hr class="half-width lesson-resources"><a href="aio.html">See all in one page</a>
 
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
@@ -349,12 +349,10 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
 <hr class="half-width"><p>Coupling models can be a difficult task, especially when there are many models involved that model processes in different ways and at different scales in time and space. To make a coupled simulation, you need to figure out which information needs to be passed between which submodels, when it needs to be sent and received, and how it can be represented, and that can be quite a puzzle. Fortunately, there is a theory of model coupling that can help you with this. It is called the Multiscale Modelling and Simulation Framework (MMSF), and despite its name, it also includes same-scale couplings.</p>
 <p>In this episode, we’ll work through a slightly extended version of the MMSF’s process for coupling two models representing two processes.</p>
-</section><section><h2 class="section-heading" id="domains">Domains<a class="anchor" aria-label="anchor" href="#domains"></a>
-<a class="anchor" aria-label="anchor" href="#domains"></a></h2>
+</section><section><h2 class="section-heading" id="domains">Domains<a class="anchor" aria-label="anchor" href="#domains"></a></h2>
 <hr class="half-width"><p>Mathematical and simulation models represent some kind of process, which takes place in a certain location in time and in space: its domain. The weather takes place in the atmosphere, earthquakes in the Earth’s crust, a forest fire in a forest. In time, that forest fire begins with a lightning strike and ends when the flames are extinguished, and even continuous processes like the airflow around an aeroplane wing can be considered to start when circumstances change and end when a steady state is reached again.</p>
 <p>The domains of two models can be the <em>same</em>, <em>overlapping</em>, <em>adjacent</em>, or <em>separated</em>, in both space and time. This is important for the coupling between them, because it decides what is sent (state or boundary conditions) and when it is sent.</p>
 
@@ -363,8 +361,7 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1-models-and-domains" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Models and domains<a class="anchor" aria-label="anchor" href="#challenge-1-models-and-domains"></a>
-</h3>
+<h3 class="callout-title">Challenge 1: Models and domains</h3>
 <div class="callout-content">
 <p>Think of two models that could potentially be coupled, and describe each model’s domain in time and space and the relation between them.</p>
 <p>Some things to ponder:</p>
@@ -394,8 +391,7 @@
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="scales">Scales<a class="anchor" aria-label="anchor" href="#scales"></a>
-<a class="anchor" aria-label="anchor" href="#scales"></a></h2>
+</section><section><h2 class="section-heading" id="scales">Scales<a class="anchor" aria-label="anchor" href="#scales"></a></h2>
 <hr class="half-width"><p>A second important property of a physical process is the scales, again in time and in space, on which it takes place. A scale can be defined by its grain and extent. There are many other terms in use for these, but we’ll use these here because they’re less ambiguous than most. The <em>grain</em> refers to the smallest detail that the model can represent. In practice, that is usually set by the timestep (in time), grid spacing, or size of an agent (in space). If these can vary throughout the domain, pick the smallest. The <em>extent</em> refers to the size of the process in space and time, so the size of its domain. How long does it take to complete (or to reach a steady state), and how large an area is modelled?</p>
 
 <div id="challenge-2-models-and-scales" class="callout challenge">
@@ -403,8 +399,7 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2-models-and-scales" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Models and scales<a class="anchor" aria-label="anchor" href="#challenge-2-models-and-scales"></a>
-</h3>
+<h3 class="callout-title">Challenge 2: Models and scales</h3>
 <div class="callout-content">
 <p>What are the scales of the models you previously considered the domains of? What are their grain and extent in space and in time?</p>
 </div>
@@ -442,8 +437,7 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3-scale-separation-map" class="callout-inner">
-<h3 class="callout-title">Challenge 3: Scale Separation Map<a class="anchor" aria-label="anchor" href="#challenge-3-scale-separation-map"></a>
-</h3>
+<h3 class="callout-title">Challenge 3: Scale Separation Map</h3>
 <div class="callout-content">
 <ul><li>What are the relations of scales a through h in the figure relative to the reference scale?</li>
 <li>Draw a scale separation map for the models you would like to couple.</li>
@@ -475,8 +469,7 @@
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="models-and-the-submodel-execution-loop">Models and the Submodel Execution Loop<a class="anchor" aria-label="anchor" href="#models-and-the-submodel-execution-loop"></a>
-<a class="anchor" aria-label="anchor" href="#models-and-the-submodel-execution-loop"></a></h2>
+</section><section><h2 class="section-heading" id="models-and-the-submodel-execution-loop">Models and the Submodel Execution Loop<a class="anchor" aria-label="anchor" href="#models-and-the-submodel-execution-loop"></a></h2>
 <hr class="half-width"><p>So far, we have talked about domains and scales of models, which we can do based on the physical properties of the modelled system, and the research questions we ask about that system. In order to be able to technically couple models however, we need to know what a model is. In the MMSF, this is done using a universal model-of-a-model called the Submodel Execution Loop (SEL):</p>
 <figure><img src="fig/ep02-submodel-execution-loop.png" alt="Diagram showing a diamond marked f init, a circle marked O i, another circle marked S, and another diamond marked O f connected by arrows in order. Another arrow loops back from S to O i. A dashed arrow points into f init, another dashed arrow points away from O i, another points into S and a fourth dashed arrow points away from O f. The circle marked O i and the diamond marked O f are white on black, the others black on white." class="figure mx-auto d-block"><figcaption>Submodel Execution Loop (SEL)</figcaption></figure><p>According to the MMSF, each model starts by initialising itself, a stage (or <em>operator</em>) known as <span class="math inline">\(f_{init}\)</span>. This puts the model into its initial state. During <span class="math inline">\(f_{init}\)</span>, information may be received from other models in a coupled simulation, which the model can use to initialise itself.</p>
 <p>Second, some output based on that state is produced in the <span class="math inline">\(O_i\)</span> operator. This is <strong>i</strong>ntermediate Output, or, looking from the outside in, we Observe an <strong>i</strong>ntermediate state, hence <span class="math inline">\(O_i\)</span>. This output may be sent to other models, where it can for example be used as boundary conditions.</p>
@@ -487,16 +480,14 @@
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Note that there’s a mnemonic here for the symbols: Operators <span class="math inline">\(O_i\)</span> and <span class="math inline">\(S\)</span>, which are within the state update loop, have a circular symbol, while <span class="math inline">\(f_{init}\)</span> and <span class="math inline">\(O_f\)</span> use a diamond shape. Also, filled symbols designate ports on which messages are sent, while open symbols designate receiving ports. Information must always be sent from an operator with a filled symbol to one with an open symbol.</p>
 </div>
 </div>
 </div>
 <p>This basic model is quite flexible. If the loop is run zero times, then the model is a simple function. Timesteps may be of any length, and vary during the run, and the model may decide to stop and exit the state update loop at any time. The state may represent anything at all in any way, and it may be updated in whichever way is suitable for the model. Any simulation code you may want to use is very likely to fit these minimal constraints.</p>
-</section><section><h2 class="section-heading" id="temporal-domain-and-scale-relations">Temporal domain and scale relations<a class="anchor" aria-label="anchor" href="#temporal-domain-and-scale-relations"></a>
-<a class="anchor" aria-label="anchor" href="#temporal-domain-and-scale-relations"></a></h2>
+</section><section><h2 class="section-heading" id="temporal-domain-and-scale-relations">Temporal domain and scale relations<a class="anchor" aria-label="anchor" href="#temporal-domain-and-scale-relations"></a></h2>
 <hr class="half-width"><p>Now that we know what a model is and how models may be related in terms of their domains and scales, we can decide how to set up the coupled simulation. We do this by looking at all pairs of two models under consideration, one pair at a time, and consider the relationships between their temporal and spatial scales as well as their domains.</p>
 <p>For reference, here are the possible relations between two time domains or two time scales:</p>
 <table class="table"><colgroup><col width="29%"><col width="29%"><col width="40%"></colgroup><thead><tr class="header"><th>Property</th>
@@ -543,8 +534,7 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4-coupling-submodel-execution-loops" class="callout-inner">
-<h3 class="callout-title">Challenge 4: Coupling Submodel Execution Loops<a class="anchor" aria-label="anchor" href="#challenge-4-coupling-submodel-execution-loops"></a>
-</h3>
+<h3 class="callout-title">Challenge 4: Coupling Submodel Execution Loops</h3>
 <div class="callout-content">
 <p>We can represent each of the two models in the scenarios above as a Submodel Execution Loop. To connect the models, we then have to send information between the operators of the models. For each of the three cases, figure out how to connect the Submodel Execution Loops of the two models so that the correct communication pattern is implemented.</p>
 </div>
@@ -565,13 +555,11 @@
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="coupling-templates">Coupling Templates<a class="anchor" aria-label="anchor" href="#coupling-templates"></a>
-<a class="anchor" aria-label="anchor" href="#coupling-templates"></a></h2>
+</section><section><h2 class="section-heading" id="coupling-templates">Coupling Templates<a class="anchor" aria-label="anchor" href="#coupling-templates"></a></h2>
 <hr class="half-width"><figure><img src="fig/ep02-coupling-templates.png" alt="Three diagrams of the coupling templates. Each diagram shows two submodel execution loops. The first diagram is titled Dispatch. In it, O_F on the first SEL is connected to F_INIT on the second SEL. The second diagram is titled Interact. In it, O_I on each SEL is connected to S on the other. The third diagram is titled Call and Release. O_I on the first SEL is connected to F_INIT on the second, this is Call. O_F on the second SEL is connected to S on the first, this is Release." class="figure mx-auto d-block"><figcaption>Coupling Templates</figcaption></figure><p>The three cases above demonstrate the four <em>Coupling Templates</em> defined by the MMSF. The first one, <span class="math inline">\(O_f\)</span> to <span class="math inline">\(f_{init}\)</span>, is called <em>dispatch</em>. The second one, <span class="math inline">\(O_i\)</span> to <span class="math inline">\(S\)</span> is called <em>interact</em>, and usually comes in pairs. The third one and the fourth one usually go together, as the combination <em>call</em> (<span class="math inline">\(O_i\)</span> to <span class="math inline">\(f_{init}\)</span>) and <em>release</em> (<span class="math inline">\(O_f\)</span> to <span class="math inline">\(S\)</span>).</p>
 <p>Given the constraints of which operators can send and which can receive, these are in fact all four possible types of connections, and between them they cover all kinds of temporal scale relations.</p>
 <p>If the time domains or time scales overlap, but are not equivalent, then an additional component is needed that sits between the models; we will not go into that advanced use case here.</p>
-</section><section><h2 class="section-heading" id="spatial-domains-scales-and-multiplicity">Spatial domains, scales and multiplicity<a class="anchor" aria-label="anchor" href="#spatial-domains-scales-and-multiplicity"></a>
-<a class="anchor" aria-label="anchor" href="#spatial-domains-scales-and-multiplicity"></a></h2>
+</section><section><h2 class="section-heading" id="spatial-domains-scales-and-multiplicity">Spatial domains, scales and multiplicity<a class="anchor" aria-label="anchor" href="#spatial-domains-scales-and-multiplicity"></a></h2>
 <hr class="half-width"><p>Having discussed temporal scales, let’s move on to the spatial scales. Like with scales in time, scales in space can be the same, overlap, be adjacent or be separated, and you can see which one you have by looking at your Scale Separation Map. Here’s another table with the interpretation of those relations in space:</p>
 <table class="table"><colgroup><col width="29%"><col width="29%"><col width="40%"></colgroup><thead><tr class="header"><th>Property</th>
 <th>Relation</th>
@@ -616,8 +604,7 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5-spatial-relations" class="callout-inner">
-<h3 class="callout-title">Challenge 5: Spatial relations<a class="anchor" aria-label="anchor" href="#challenge-5-spatial-relations"></a>
-</h3>
+<h3 class="callout-title">Challenge 5: Spatial relations</h3>
 <div class="callout-content">
 <p>Think of an example for each of the above spatial domain and scale relations. Can you think of examples that don’t fit any of them?</p>
 </div>
@@ -638,16 +625,14 @@
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="mmsl-diagrams">MMSL Diagrams<a class="anchor" aria-label="anchor" href="#mmsl-diagrams"></a>
-<a class="anchor" aria-label="anchor" href="#mmsl-diagrams"></a></h2>
+</section><section><h2 class="section-heading" id="mmsl-diagrams">MMSL Diagrams<a class="anchor" aria-label="anchor" href="#mmsl-diagrams"></a></h2>
 <hr class="half-width"><p>For larger coupled simulations consisting of several submodels and other components, drawing the complete submodel execution loop as we did above gets too complicated. Fortunately, a simplified notation is available in the form of the Multiscale Modelling and Simulation Language (MMSL). This language describes a coupled simulation as a set of components and the connections between them. Its YAML-based form, yMMSL, is used as the configuration language for MUSCLE3 (more on which in the next episodes). Its graphical form, gMMSL, provides a compact visual representation of a coupled model:</p>
 <figure><img src="fig/ep02-coupling-templates-mmsl.png" alt="Three diagrams of the coupling templates, this time in gMMSL. Each diagram shows two boxes. The top diagram is labelled dispatch and has the boxes labeled First and Second. A line connects a filled diamond on the box labelled first to an open diamond on the box labelled second. The bottom left diagram is labelled interact and has the boxes labeled A and B. A line connects a filled circle on box A to an open circle on box B, and another line connects a closed circle on box B to an open circle on box A. The bottom right diagram is labelled Call and Release. Its boxes are labelled Macro and Micro. A line connects a closed circle on Macro to an open diamond on Micro, and another line connects a filled diamond on Micro to an open circle on Macro. The box labeled Micro additionally has the number 10 written in its top right corner." class="figure mx-auto d-block"><figcaption>Coupling Templates in gMMSL</figcaption></figure><div id="challenge-6-deciphering-gmmsl" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6-deciphering-gmmsl" class="callout-inner">
-<h3 class="callout-title">Challenge 6: Deciphering gMMSL<a class="anchor" aria-label="anchor" href="#challenge-6-deciphering-gmmsl"></a>
-</h3>
+<h3 class="callout-title">Challenge 6: Deciphering gMMSL</h3>
 <div class="callout-content">
 <p>Explain the above figure.</p>
 </div>
@@ -672,8 +657,7 @@
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
-</h3>
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
 <p>Real simulations often need more than just the submodels, especially if you want to keep everything nice and modular. Different models often send and receive data in different formats for example, so that you need converters, and sometimes splitters and joiners that can split messages or join them together. If there is a scale difference, then some kind of scale bridge usually needs to be implemented, and for uncertainty quantification components may be needed that sample parameters and combine results into distributions.</p>
 <p>These components are often simple functions, and can then be implemented just like a submodel with only an <span class="math inline">\(f_{init}\)</span> and <span class="math inline">\(O_f\)</span>. Such a component can then be inserted in between a connection between two submodels by interrupting a conduit and putting it in between.</p>
@@ -685,8 +669,7 @@
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul><li>Physical processes take place on a domain and at certain scales in time and space</li>
 <li>Simulation models are described by the Submodel Execution Loop</li>
@@ -735,7 +718,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -758,7 +741,7 @@ any links that you are not going to use.
   "identifier": "https://esciencecenter-digital-skills.github.io/lesson-model-coupling/02-theory.html",
   "dateCreated": "2022-08-16",
   "dateModified": "2022-10-31",
-  "datePublished": "2024-08-20"
+  "datePublished": "2024-08-27"
 }
 
   </script><script>
